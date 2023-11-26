@@ -1,0 +1,12 @@
+C:\Users\YUHAN\Desktop\새 폴더\2023SolutionTeam\Kiosk\Kiosk\bin\Debug\Kiosk.exe.config
+C:\Users\YUHAN\Desktop\새 폴더\2023SolutionTeam\Kiosk\Kiosk\bin\Debug\Kiosk.exe
+C:\Users\YUHAN\Desktop\새 폴더\2023SolutionTeam\Kiosk\Kiosk\bin\Debug\Kiosk.pdb
+C:\Users\YUHAN\Desktop\새 폴더\2023SolutionTeam\Kiosk\Kiosk\obj\Debug\Kiosk.csproj.AssemblyReference.cache
+C:\Users\YUHAN\Desktop\새 폴더\2023SolutionTeam\Kiosk\Kiosk\obj\Debug\Kiosk.Properties.Resources.resources
+C:\Users\YUHAN\Desktop\새 폴더\2023SolutionTeam\Kiosk\Kiosk\obj\Debug\Kiosk.csproj.GenerateResource.cache
+C:\Users\YUHAN\Desktop\새 폴더\2023SolutionTeam\Kiosk\Kiosk\obj\Debug\Kiosk.csproj.CoreCompileInputs.cache
+C:\Users\YUHAN\Desktop\새 폴더\2023SolutionTeam\Kiosk\Kiosk\obj\Debug\Kiosk.exe
+C:\Users\YUHAN\Desktop\새 폴더\2023SolutionTeam\Kiosk\Kiosk\obj\Debug\Kiosk.pdb
+C:\Users\YUHAN\Desktop\새 폴더\2023SolutionTeam\Kiosk\Kiosk\obj\Debug\Kiosk.Form1.resources
+C:\Users\YUHAN\Desktop\새 폴더\2023SolutionTeam\Kiosk\Kiosk\obj\Debug\Kiosk.Form2.resources
+C:\Users\YUHAN\Desktop\새 폴더\2023SolutionTeam\Kiosk\Kiosk\obj\Debug\Kiosk.Form3.resources
