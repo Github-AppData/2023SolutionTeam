@@ -232,6 +232,7 @@
             this.btn1.TabIndex = 1;
             this.btn1.Text = "메뉴 1";
             this.btn1.UseVisualStyleBackColor = false;
+            this.btn1.Click += new System.EventHandler(this.btn_click);
             // 
             // btn2
             // 
@@ -244,6 +245,7 @@
             this.btn2.TabIndex = 1;
             this.btn2.Text = "메뉴 2";
             this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Click += new System.EventHandler(this.btn_click);
             // 
             // btn3
             // 
@@ -256,6 +258,7 @@
             this.btn3.TabIndex = 1;
             this.btn3.Text = "메뉴 3";
             this.btn3.UseVisualStyleBackColor = false;
+            this.btn3.Click += new System.EventHandler(this.btn_click);
             // 
             // btn4
             // 
@@ -268,6 +271,7 @@
             this.btn4.TabIndex = 1;
             this.btn4.Text = "메뉴 4";
             this.btn4.UseVisualStyleBackColor = false;
+            this.btn4.Click += new System.EventHandler(this.btn_click);
             // 
             // btn5
             // 
@@ -280,6 +284,7 @@
             this.btn5.TabIndex = 1;
             this.btn5.Text = "메뉴 5";
             this.btn5.UseVisualStyleBackColor = false;
+            this.btn5.Click += new System.EventHandler(this.btn_click);
             // 
             // btn6
             // 
@@ -292,6 +297,7 @@
             this.btn6.TabIndex = 1;
             this.btn6.Text = "메뉴 6";
             this.btn6.UseVisualStyleBackColor = false;
+            this.btn6.Click += new System.EventHandler(this.btn_click);
             // 
             // btn7
             // 
@@ -304,6 +310,7 @@
             this.btn7.TabIndex = 1;
             this.btn7.Text = "메뉴 7";
             this.btn7.UseVisualStyleBackColor = false;
+            this.btn7.Click += new System.EventHandler(this.btn_click);
             // 
             // btn8
             // 
@@ -316,6 +323,7 @@
             this.btn8.TabIndex = 1;
             this.btn8.Text = "메뉴 8";
             this.btn8.UseVisualStyleBackColor = false;
+            this.btn8.Click += new System.EventHandler(this.btn_click);
             // 
             // btn9
             // 
@@ -328,6 +336,7 @@
             this.btn9.TabIndex = 1;
             this.btn9.Text = "메뉴 9";
             this.btn9.UseVisualStyleBackColor = false;
+            this.btn9.Click += new System.EventHandler(this.btn_click);
             // 
             // btn10
             // 
@@ -340,6 +349,7 @@
             this.btn10.TabIndex = 1;
             this.btn10.Text = "메뉴 10";
             this.btn10.UseVisualStyleBackColor = false;
+            this.btn10.Click += new System.EventHandler(this.btn_click);
             // 
             // btn11
             // 
@@ -352,6 +362,7 @@
             this.btn11.TabIndex = 1;
             this.btn11.Text = "메뉴 11";
             this.btn11.UseVisualStyleBackColor = false;
+            this.btn11.Click += new System.EventHandler(this.btn_click);
             // 
             // btn12
             // 
@@ -364,6 +375,7 @@
             this.btn12.TabIndex = 1;
             this.btn12.Text = "메뉴 12";
             this.btn12.UseVisualStyleBackColor = false;
+            this.btn12.Click += new System.EventHandler(this.btn_click);
             // 
             // btn13
             // 
@@ -376,6 +388,7 @@
             this.btn13.TabIndex = 1;
             this.btn13.Text = "메뉴 13";
             this.btn13.UseVisualStyleBackColor = false;
+            this.btn13.Click += new System.EventHandler(this.btn_click);
             // 
             // btn14
             // 
@@ -388,6 +401,7 @@
             this.btn14.TabIndex = 1;
             this.btn14.Text = "메뉴 14";
             this.btn14.UseVisualStyleBackColor = false;
+            this.btn14.Click += new System.EventHandler(this.btn_click);
             // 
             // btn15
             // 
@@ -400,6 +414,7 @@
             this.btn15.TabIndex = 1;
             this.btn15.Text = "메뉴 15";
             this.btn15.UseVisualStyleBackColor = false;
+            this.btn15.Click += new System.EventHandler(this.btn_click);
             // 
             // btn16
             // 
@@ -412,6 +427,7 @@
             this.btn16.TabIndex = 1;
             this.btn16.Text = "메뉴 16";
             this.btn16.UseVisualStyleBackColor = false;
+            this.btn16.Click += new System.EventHandler(this.btn_click);
             // 
             // panel1
             // 
