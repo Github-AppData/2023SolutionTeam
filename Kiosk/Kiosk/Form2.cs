@@ -15,9 +15,9 @@ namespace Kiosk
     {
         // Mysql 관련 설정
         MySqlConnection conn = new MySqlConnection("Server=localhost;Port=3306;" +
-                                                    "Database=PointOfSalesDB" +
-                                                    "Uid=YUHAN" +
-                                                    "Pwd=1234");
+                                                    "Database=PointOfSalesDB;" +
+                                                    "Uid=root;" +
+                                                    "Pwd=1234;");
 
         // 폼이 표시되기 이 전에 발생한다.
         // - 데이터를 셋 하는 과정
