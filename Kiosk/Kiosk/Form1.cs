@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,12 @@ namespace Kiosk
 {
     public partial class Form1 : Form
     {
+        // Mysql 관련 설정
+        MySqlConnection conn = new MySqlConnection("Server=localhost;Port=3306;" +
+                                                    "Database=PointOfSalesDB;" +
+                                                    "Uid=root;" +
+                                                    "Pwd=1234;");
+
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +39,37 @@ namespace Kiosk
 
             Form3 form3 = new Form3();
             form3.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string id = this.id_Box.Text;
+            string pwd = this.pwd_Box.Text;
+
+            if (id == "" || pwd == "")
+            {
+                MessageBox.Show("아이디 또는 비밀번호가 입력되지 않았습니다.");
+            }
+            else
+            {
+                string searchQuery = "select * from user where user_id = '" +  id + "';";
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(searchQuery, conn);
+                MySqlDataReader table = cmd.ExecuteReader();
+
+                while (table.Read())
+                {
+                    if (id == table["user_id"].ToString() && pwd == table["user_password"].ToString())
+                    {
+                        MessageBox.Show("로그인에 성공하였습니다.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("로그인에 실패하였습니다.");
+                    }
+                }
+                conn.Close();
+            }
         }
     }
 }
