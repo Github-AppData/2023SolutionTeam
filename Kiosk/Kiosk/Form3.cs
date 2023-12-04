@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Kiosk.DES;
 
 namespace Kiosk
 {
@@ -24,6 +25,9 @@ namespace Kiosk
         string user_pwdchk;
         string user_name;
 
+        //아무거나 8자리 넣고 쓰면 됨
+        DES des = new DES("qwerasdf");
+
         public Form3()
         {
             InitializeComponent();
@@ -38,19 +42,24 @@ namespace Kiosk
 
             try
             {
-                string insertQuery = "insert into user(user_id,user_password,user_name) values ('" + user_id + "', '" + user_pwd + "', '" + user_name + "')";
-                MySqlCommand cmd = new MySqlCommand(insertQuery, conn);
                 if (user_pwd != user_pwdchk)
                 {
                     MessageBox.Show("비밀번호와 비밀번호 확인의 값이 동일하지 않습니다.");
                 }
                 else
                 {
+                    user_pwd = des.result(DesType.Encrypt, user_pwd);
+                    string insertQuery = "insert into user(user_id,user_password,user_name) values ('" + user_id + "', '" + user_pwd + "', '" + user_name + "')";
+                    MySqlCommand cmd = new MySqlCommand(insertQuery, conn);
                     conn.Open();
                     if (cmd.ExecuteNonQuery() == 1)
                     {
                         MessageBox.Show("회원가입이 완료되었습니다.");
                         conn.Close();
+                        //Form2로 돌아감
+                        Form1 form1 = new Form1();
+                        form1.ShowDialog();
+
                         Close();
                     }
                 }
@@ -63,8 +72,7 @@ namespace Kiosk
 
         private void Form3_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.ShowDialog();
+            
         }
     }
 }
