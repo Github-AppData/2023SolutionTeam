@@ -34,7 +34,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.signin_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -43,7 +43,7 @@
             this.label1.Font = new System.Drawing.Font("굴림", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(340, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 32);
+            this.label1.Size = new System.Drawing.Size(113, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "로그인";
             // 
@@ -94,22 +94,23 @@
             this.button1.Text = "로그인";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // signin_btn
             // 
-            this.button2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.Location = new System.Drawing.Point(406, 271);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 28);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "회원가입";
-            this.button2.UseVisualStyleBackColor = true;
+            this.signin_btn.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.signin_btn.Location = new System.Drawing.Point(406, 271);
+            this.signin_btn.Name = "signin_btn";
+            this.signin_btn.Size = new System.Drawing.Size(98, 28);
+            this.signin_btn.TabIndex = 6;
+            this.signin_btn.Text = "회원가입";
+            this.signin_btn.UseVisualStyleBackColor = true;
+            this.signin_btn.Click += new System.EventHandler(this.signin_btn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.signin_btn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -136,7 +137,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button signin_btn;
     }
 }
 

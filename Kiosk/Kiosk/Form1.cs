@@ -15,8 +15,6 @@ namespace Kiosk
         public Form1()
         {
             InitializeComponent();
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -26,6 +24,14 @@ namespace Kiosk
 
             // Form2를 모달로 띄우기 (다른 폼과 상호작용이 불가능한 모달 형태)
             form2.ShowDialog();
+        }
+
+        private void signin_btn_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
         }
     }
 }

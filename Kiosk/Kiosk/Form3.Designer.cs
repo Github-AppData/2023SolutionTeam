@@ -104,7 +104,7 @@
             this.Box_pwdchk.Name = "Box_pwdchk";
             this.Box_pwdchk.PasswordChar = '*';
             this.Box_pwdchk.Size = new System.Drawing.Size(207, 26);
-            this.Box_pwdchk.TabIndex = 8;
+            this.Box_pwdchk.TabIndex = 9;
             // 
             // label5
             // 
@@ -121,9 +121,8 @@
             this.Box_name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Box_name.Location = new System.Drawing.Point(134, 230);
             this.Box_name.Name = "Box_name";
-            this.Box_name.PasswordChar = '*';
             this.Box_name.Size = new System.Drawing.Size(207, 26);
-            this.Box_name.TabIndex = 8;
+            this.Box_name.TabIndex = 10;
             // 
             // button1
             // 
@@ -131,7 +130,7 @@
             this.button1.Location = new System.Drawing.Point(183, 282);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 31);
-            this.button1.TabIndex = 9;
+            this.button1.TabIndex = 11;
             this.button1.Text = "회원가입";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -157,6 +156,7 @@
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "회원가입";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form3_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -98,7 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Crypto.cs" />
+    <Compile Include="DES.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
