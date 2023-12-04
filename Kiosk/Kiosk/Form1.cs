@@ -50,6 +50,9 @@ namespace Kiosk
             string id = this.id_Box.Text;
             string pwd = this.pwd_Box.Text;
 
+            // 로그인 상태 변수 선언, 비로그인 상태는 0
+            int login_status = 0;
+
             if (id == "" || pwd == "")
             {
                 MessageBox.Show("아이디 또는 비밀번호가 입력되지 않았습니다.");
@@ -66,18 +69,23 @@ namespace Kiosk
                 {
                     if (id == table["user_id"].ToString() && pwd == table["user_password"].ToString())
                     {
-                        MessageBox.Show("로그인에 성공하였습니다.");
-                        Form2 form2 = new Form2();
-                        form2.ShowDialog();
-
-                        Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("로그인에 실패하였습니다.");
+                        login_status = 1;
                     }
                 }
                 conn.Close();
+
+                if(login_status == 1)
+                {
+                    MessageBox.Show("로그인에 성공하였습니다.");
+                    Form2 form2 = new Form2();
+                    form2.ShowDialog();
+
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("로그인에 실패하였습니다.");
+                }
             }
         }
     }
