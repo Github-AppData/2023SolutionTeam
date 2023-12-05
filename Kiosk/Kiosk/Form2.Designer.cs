@@ -30,15 +30,11 @@
         {
             this.OrderListView = new System.Windows.Forms.ListView();
             this.listName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PlusBtn = new System.Windows.Forms.Button();
             this.Minusbtn = new System.Windows.Forms.Button();
             this.kakaPaybtn = new System.Windows.Forms.Button();
             this.Deletebtn = new System.Windows.Forms.Button();
             this.CardPaybtn = new System.Windows.Forms.Button();
-            this.backbtn = new System.Windows.Forms.Button();
-            this.fowardbtn = new System.Windows.Forms.Button();
             this.kindOf_1btn = new System.Windows.Forms.Button();
             this.kindOf_2btn = new System.Windows.Forms.Button();
             this.kindOf_3btn = new System.Windows.Forms.Button();
@@ -61,6 +57,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtbox = new System.Windows.Forms.TextBox();
+            this.listcount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,33 +67,24 @@
             // 
             this.OrderListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.listName,
-            this.listPrice,
-            this.listCount});
+            this.listcount,
+            this.listPrice});
             this.OrderListView.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.OrderListView.GridLines = true;
             this.OrderListView.HideSelection = false;
             this.OrderListView.Location = new System.Drawing.Point(12, 185);
             this.OrderListView.Name = "OrderListView";
-            this.OrderListView.Size = new System.Drawing.Size(441, 392);
+            this.OrderListView.Size = new System.Drawing.Size(441, 261);
             this.OrderListView.TabIndex = 0;
             this.OrderListView.UseCompatibleStateImageBehavior = false;
             this.OrderListView.View = System.Windows.Forms.View.Details;
             this.OrderListView.SelectedIndexChanged += new System.EventHandler(this.OrderListView_SelectedIndexChanged);
+            this.OrderListView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OrderListView_MouseDown);
             // 
             // listName
             // 
             this.listName.Text = "상품 이름";
-            this.listName.Width = 180;
-            // 
-            // listPrice
-            // 
-            this.listPrice.Text = "가격";
-            this.listPrice.Width = 111;
-            // 
-            // listCount
-            // 
-            this.listCount.Text = "수량";
-            this.listCount.Width = 164;
+            this.listName.Width = 249;
             // 
             // PlusBtn
             // 
@@ -108,6 +98,7 @@
             this.PlusBtn.TabIndex = 1;
             this.PlusBtn.Text = "+ 1";
             this.PlusBtn.UseVisualStyleBackColor = false;
+            this.PlusBtn.Click += new System.EventHandler(this.PlusBtn_Click);
             // 
             // Minusbtn
             // 
@@ -121,6 +112,7 @@
             this.Minusbtn.TabIndex = 1;
             this.Minusbtn.Text = "- 1";
             this.Minusbtn.UseVisualStyleBackColor = false;
+            this.Minusbtn.Click += new System.EventHandler(this.Minusbtn_Click);
             // 
             // kakaPaybtn
             // 
@@ -147,6 +139,7 @@
             this.Deletebtn.TabIndex = 1;
             this.Deletebtn.Text = "삭제";
             this.Deletebtn.UseVisualStyleBackColor = false;
+            this.Deletebtn.Click += new System.EventHandler(this.Deletebtn_Click);
             // 
             // CardPaybtn
             // 
@@ -160,30 +153,6 @@
             this.CardPaybtn.TabIndex = 1;
             this.CardPaybtn.Text = "카드 결제";
             this.CardPaybtn.UseVisualStyleBackColor = false;
-            // 
-            // backbtn
-            // 
-            this.backbtn.BackColor = System.Drawing.Color.SkyBlue;
-            this.backbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backbtn.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.backbtn.Location = new System.Drawing.Point(479, 12);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(71, 76);
-            this.backbtn.TabIndex = 1;
-            this.backbtn.Text = "이전";
-            this.backbtn.UseVisualStyleBackColor = false;
-            // 
-            // fowardbtn
-            // 
-            this.fowardbtn.BackColor = System.Drawing.Color.SkyBlue;
-            this.fowardbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fowardbtn.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.fowardbtn.Location = new System.Drawing.Point(83, 7);
-            this.fowardbtn.Name = "fowardbtn";
-            this.fowardbtn.Size = new System.Drawing.Size(71, 76);
-            this.fowardbtn.TabIndex = 1;
-            this.fowardbtn.Text = "다음";
-            this.fowardbtn.UseVisualStyleBackColor = false;
             // 
             // kindOf_1btn
             // 
@@ -453,7 +422,6 @@
             this.panel2.Controls.Add(this.btn9);
             this.panel2.Controls.Add(this.kindOf_1btn);
             this.panel2.Controls.Add(this.btn12);
-            this.panel2.Controls.Add(this.fowardbtn);
             this.panel2.Controls.Add(this.btn16);
             this.panel2.Controls.Add(this.btn4);
             this.panel2.Controls.Add(this.btn13);
@@ -479,14 +447,32 @@
             this.panel3.Size = new System.Drawing.Size(1, 157);
             this.panel3.TabIndex = 3;
             // 
+            // txtbox
+            // 
+            this.txtbox.Location = new System.Drawing.Point(14, 458);
+            this.txtbox.Multiline = true;
+            this.txtbox.Name = "txtbox";
+            this.txtbox.Size = new System.Drawing.Size(438, 108);
+            this.txtbox.TabIndex = 4;
+            this.txtbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // listcount
+            // 
+            this.listcount.Text = "수량";
+            // 
+            // listPrice
+            // 
+            this.listPrice.Text = "가격";
+            this.listPrice.Width = 191;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1125, 589);
+            this.Controls.Add(this.txtbox);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.backbtn);
             this.Controls.Add(this.Deletebtn);
             this.Controls.Add(this.CardPaybtn);
             this.Controls.Add(this.kakaPaybtn);
@@ -504,6 +490,7 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -511,15 +498,11 @@
 
         private System.Windows.Forms.ListView OrderListView;
         private System.Windows.Forms.ColumnHeader listName;
-        private System.Windows.Forms.ColumnHeader listPrice;
-        private System.Windows.Forms.ColumnHeader listCount;
         private System.Windows.Forms.Button PlusBtn;
         private System.Windows.Forms.Button Minusbtn;
         private System.Windows.Forms.Button kakaPaybtn;
         private System.Windows.Forms.Button Deletebtn;
         private System.Windows.Forms.Button CardPaybtn;
-        private System.Windows.Forms.Button backbtn;
-        private System.Windows.Forms.Button fowardbtn;
         private System.Windows.Forms.Button kindOf_1btn;
         private System.Windows.Forms.Button kindOf_2btn;
         private System.Windows.Forms.Button kindOf_3btn;
@@ -542,5 +525,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox txtbox;
+        private System.Windows.Forms.ColumnHeader listcount;
+        private System.Windows.Forms.ColumnHeader listPrice;
     }
 }

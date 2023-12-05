@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tea`
+-- Table structure for table `noncoffee`
 --
 
-DROP TABLE IF EXISTS `tea`;
+DROP TABLE IF EXISTS `noncoffee`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tea` (
+CREATE TABLE `noncoffee` (
   `idx` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
   `price` int DEFAULT NULL,
@@ -33,12 +33,12 @@ CREATE TABLE `tea` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tea`
+-- Dumping data for table `noncoffee`
 --
 
-LOCK TABLES `tea` WRITE;
-/*!40000 ALTER TABLE `tea` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tea` ENABLE KEYS */;
+LOCK TABLES `noncoffee` WRITE;
+/*!40000 ALTER TABLE `noncoffee` DISABLE KEYS */;
+/*!40000 ALTER TABLE `noncoffee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
