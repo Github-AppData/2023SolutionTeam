@@ -28,57 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.OrderListView = new System.Windows.Forms.ListView();
             this.listName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
+            this.PlusBtn = new System.Windows.Forms.Button();
+            this.Minusbtn = new System.Windows.Forms.Button();
+            this.kakaPaybtn = new System.Windows.Forms.Button();
+            this.Deletebtn = new System.Windows.Forms.Button();
+            this.CardPaybtn = new System.Windows.Forms.Button();
+            this.backbtn = new System.Windows.Forms.Button();
+            this.fowardbtn = new System.Windows.Forms.Button();
+            this.kindOf_1btn = new System.Windows.Forms.Button();
+            this.kindOf_2btn = new System.Windows.Forms.Button();
+            this.kindOf_3btn = new System.Windows.Forms.Button();
+            this.btn1 = new System.Windows.Forms.Button();
+            this.btn2 = new System.Windows.Forms.Button();
+            this.btn3 = new System.Windows.Forms.Button();
+            this.btn4 = new System.Windows.Forms.Button();
+            this.btn5 = new System.Windows.Forms.Button();
+            this.btn6 = new System.Windows.Forms.Button();
+            this.btn7 = new System.Windows.Forms.Button();
+            this.btn8 = new System.Windows.Forms.Button();
+            this.btn9 = new System.Windows.Forms.Button();
+            this.btn10 = new System.Windows.Forms.Button();
+            this.btn11 = new System.Windows.Forms.Button();
+            this.btn12 = new System.Windows.Forms.Button();
+            this.btn13 = new System.Windows.Forms.Button();
+            this.btn14 = new System.Windows.Forms.Button();
+            this.btn15 = new System.Windows.Forms.Button();
+            this.btn16 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listView1
+            // OrderListView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.OrderListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.listName,
             this.listPrice,
             this.listCount});
-            this.listView1.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 185);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(441, 392);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.OrderListView.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.OrderListView.GridLines = true;
+            this.OrderListView.HideSelection = false;
+            this.OrderListView.Location = new System.Drawing.Point(12, 185);
+            this.OrderListView.Name = "OrderListView";
+            this.OrderListView.Size = new System.Drawing.Size(441, 392);
+            this.OrderListView.TabIndex = 0;
+            this.OrderListView.UseCompatibleStateImageBehavior = false;
+            this.OrderListView.View = System.Windows.Forms.View.Details;
+            this.OrderListView.SelectedIndexChanged += new System.EventHandler(this.OrderListView_SelectedIndexChanged);
             // 
             // listName
             // 
@@ -93,324 +94,340 @@
             // listCount
             // 
             this.listCount.Text = "수량";
-            this.listCount.Width = 146;
+            this.listCount.Width = 164;
             // 
-            // button1
+            // PlusBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(158)))), ((int)(((byte)(219)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "+ 1";
-            this.button1.UseVisualStyleBackColor = false;
+            this.PlusBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(158)))), ((int)(((byte)(219)))));
+            this.PlusBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PlusBtn.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.PlusBtn.ForeColor = System.Drawing.Color.White;
+            this.PlusBtn.Location = new System.Drawing.Point(12, 12);
+            this.PlusBtn.Name = "PlusBtn";
+            this.PlusBtn.Size = new System.Drawing.Size(99, 35);
+            this.PlusBtn.TabIndex = 1;
+            this.PlusBtn.Text = "+ 1";
+            this.PlusBtn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // Minusbtn
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(158)))), ((int)(((byte)(219)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(12, 53);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "- 1";
-            this.button2.UseVisualStyleBackColor = false;
+            this.Minusbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(158)))), ((int)(((byte)(219)))));
+            this.Minusbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Minusbtn.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Minusbtn.ForeColor = System.Drawing.Color.White;
+            this.Minusbtn.Location = new System.Drawing.Point(12, 53);
+            this.Minusbtn.Name = "Minusbtn";
+            this.Minusbtn.Size = new System.Drawing.Size(99, 35);
+            this.Minusbtn.TabIndex = 1;
+            this.Minusbtn.Text = "- 1";
+            this.Minusbtn.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // kakaPaybtn
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(158)))), ((int)(((byte)(219)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(130, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(323, 76);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "카카오페이 결제";
-            this.button4.UseVisualStyleBackColor = false;
+            this.kakaPaybtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(158)))), ((int)(((byte)(219)))));
+            this.kakaPaybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.kakaPaybtn.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.kakaPaybtn.ForeColor = System.Drawing.Color.White;
+            this.kakaPaybtn.Location = new System.Drawing.Point(130, 12);
+            this.kakaPaybtn.Name = "kakaPaybtn";
+            this.kakaPaybtn.Size = new System.Drawing.Size(323, 76);
+            this.kakaPaybtn.TabIndex = 1;
+            this.kakaPaybtn.Text = "카카오페이 결제";
+            this.kakaPaybtn.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // Deletebtn
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(158)))), ((int)(((byte)(219)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(11, 101);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 76);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "삭제";
-            this.button3.UseVisualStyleBackColor = false;
+            this.Deletebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(158)))), ((int)(((byte)(219)))));
+            this.Deletebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Deletebtn.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Deletebtn.ForeColor = System.Drawing.Color.White;
+            this.Deletebtn.Location = new System.Drawing.Point(11, 101);
+            this.Deletebtn.Name = "Deletebtn";
+            this.Deletebtn.Size = new System.Drawing.Size(99, 76);
+            this.Deletebtn.TabIndex = 1;
+            this.Deletebtn.Text = "삭제";
+            this.Deletebtn.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // CardPaybtn
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(158)))), ((int)(((byte)(219)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(129, 101);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(323, 76);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "카드 결제";
-            this.button5.UseVisualStyleBackColor = false;
+            this.CardPaybtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(158)))), ((int)(((byte)(219)))));
+            this.CardPaybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CardPaybtn.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.CardPaybtn.ForeColor = System.Drawing.Color.White;
+            this.CardPaybtn.Location = new System.Drawing.Point(129, 101);
+            this.CardPaybtn.Name = "CardPaybtn";
+            this.CardPaybtn.Size = new System.Drawing.Size(323, 76);
+            this.CardPaybtn.TabIndex = 1;
+            this.CardPaybtn.Text = "카드 결제";
+            this.CardPaybtn.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // backbtn
             // 
-            this.button6.BackColor = System.Drawing.Color.SkyBlue;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.Location = new System.Drawing.Point(479, 12);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(71, 76);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "이전";
-            this.button6.UseVisualStyleBackColor = false;
+            this.backbtn.BackColor = System.Drawing.Color.SkyBlue;
+            this.backbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backbtn.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.backbtn.Location = new System.Drawing.Point(479, 12);
+            this.backbtn.Name = "backbtn";
+            this.backbtn.Size = new System.Drawing.Size(71, 76);
+            this.backbtn.TabIndex = 1;
+            this.backbtn.Text = "이전";
+            this.backbtn.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // fowardbtn
             // 
-            this.button7.BackColor = System.Drawing.Color.SkyBlue;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.Location = new System.Drawing.Point(83, 7);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(71, 76);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "다음";
-            this.button7.UseVisualStyleBackColor = false;
+            this.fowardbtn.BackColor = System.Drawing.Color.SkyBlue;
+            this.fowardbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fowardbtn.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.fowardbtn.Location = new System.Drawing.Point(83, 7);
+            this.fowardbtn.Name = "fowardbtn";
+            this.fowardbtn.Size = new System.Drawing.Size(71, 76);
+            this.fowardbtn.TabIndex = 1;
+            this.fowardbtn.Text = "다음";
+            this.fowardbtn.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // kindOf_1btn
             // 
-            this.button8.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button8.Location = new System.Drawing.Point(169, 8);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(145, 76);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "종류 1";
-            this.button8.UseVisualStyleBackColor = false;
+            this.kindOf_1btn.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.kindOf_1btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.kindOf_1btn.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.kindOf_1btn.Location = new System.Drawing.Point(169, 8);
+            this.kindOf_1btn.Name = "kindOf_1btn";
+            this.kindOf_1btn.Size = new System.Drawing.Size(145, 76);
+            this.kindOf_1btn.TabIndex = 1;
+            this.kindOf_1btn.Text = "종류 1";
+            this.kindOf_1btn.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // kindOf_2btn
             // 
-            this.button9.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button9.Location = new System.Drawing.Point(329, 8);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(145, 76);
-            this.button9.TabIndex = 1;
-            this.button9.Text = "종류 2";
-            this.button9.UseVisualStyleBackColor = false;
+            this.kindOf_2btn.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.kindOf_2btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.kindOf_2btn.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.kindOf_2btn.Location = new System.Drawing.Point(329, 8);
+            this.kindOf_2btn.Name = "kindOf_2btn";
+            this.kindOf_2btn.Size = new System.Drawing.Size(145, 76);
+            this.kindOf_2btn.TabIndex = 1;
+            this.kindOf_2btn.Text = "종류 2";
+            this.kindOf_2btn.UseVisualStyleBackColor = false;
             // 
-            // button10
+            // kindOf_3btn
             // 
-            this.button10.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button10.Location = new System.Drawing.Point(489, 8);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(145, 76);
-            this.button10.TabIndex = 1;
-            this.button10.Text = "종류 3";
-            this.button10.UseVisualStyleBackColor = false;
+            this.kindOf_3btn.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.kindOf_3btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.kindOf_3btn.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.kindOf_3btn.Location = new System.Drawing.Point(489, 8);
+            this.kindOf_3btn.Name = "kindOf_3btn";
+            this.kindOf_3btn.Size = new System.Drawing.Size(145, 76);
+            this.kindOf_3btn.TabIndex = 1;
+            this.kindOf_3btn.Text = "종류 3";
+            this.kindOf_3btn.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // btn1
             // 
-            this.button11.BackColor = System.Drawing.Color.Azure;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button11.Location = new System.Drawing.Point(9, 96);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(145, 105);
-            this.button11.TabIndex = 1;
-            this.button11.Text = "메뉴 1";
-            this.button11.UseVisualStyleBackColor = false;
+            this.btn1.BackColor = System.Drawing.Color.Azure;
+            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn1.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn1.Location = new System.Drawing.Point(9, 96);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(145, 105);
+            this.btn1.TabIndex = 1;
+            this.btn1.Text = "메뉴 1";
+            this.btn1.UseVisualStyleBackColor = false;
+            this.btn1.Click += new System.EventHandler(this.btn_click);
             // 
-            // button12
+            // btn2
             // 
-            this.button12.BackColor = System.Drawing.Color.Azure;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button12.Location = new System.Drawing.Point(169, 96);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(145, 105);
-            this.button12.TabIndex = 1;
-            this.button12.Text = "메뉴 2";
-            this.button12.UseVisualStyleBackColor = false;
+            this.btn2.BackColor = System.Drawing.Color.Azure;
+            this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn2.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn2.Location = new System.Drawing.Point(169, 96);
+            this.btn2.Name = "btn2";
+            this.btn2.Size = new System.Drawing.Size(145, 105);
+            this.btn2.TabIndex = 1;
+            this.btn2.Text = "메뉴 2";
+            this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Click += new System.EventHandler(this.btn_click);
             // 
-            // button13
+            // btn3
             // 
-            this.button13.BackColor = System.Drawing.Color.Azure;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button13.Location = new System.Drawing.Point(329, 96);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(145, 105);
-            this.button13.TabIndex = 1;
-            this.button13.Text = "메뉴 3";
-            this.button13.UseVisualStyleBackColor = false;
+            this.btn3.BackColor = System.Drawing.Color.Azure;
+            this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn3.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn3.Location = new System.Drawing.Point(329, 96);
+            this.btn3.Name = "btn3";
+            this.btn3.Size = new System.Drawing.Size(145, 105);
+            this.btn3.TabIndex = 1;
+            this.btn3.Text = "메뉴 3";
+            this.btn3.UseVisualStyleBackColor = false;
+            this.btn3.Click += new System.EventHandler(this.btn_click);
             // 
-            // button14
+            // btn4
             // 
-            this.button14.BackColor = System.Drawing.Color.Azure;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button14.Location = new System.Drawing.Point(489, 96);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(145, 105);
-            this.button14.TabIndex = 1;
-            this.button14.Text = "메뉴 4";
-            this.button14.UseVisualStyleBackColor = false;
+            this.btn4.BackColor = System.Drawing.Color.Azure;
+            this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn4.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn4.Location = new System.Drawing.Point(489, 96);
+            this.btn4.Name = "btn4";
+            this.btn4.Size = new System.Drawing.Size(145, 105);
+            this.btn4.TabIndex = 1;
+            this.btn4.Text = "메뉴 4";
+            this.btn4.UseVisualStyleBackColor = false;
+            this.btn4.Click += new System.EventHandler(this.btn_click);
             // 
-            // button15
+            // btn5
             // 
-            this.button15.BackColor = System.Drawing.Color.Azure;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button15.Location = new System.Drawing.Point(9, 216);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(145, 105);
-            this.button15.TabIndex = 1;
-            this.button15.Text = "메뉴 5";
-            this.button15.UseVisualStyleBackColor = false;
+            this.btn5.BackColor = System.Drawing.Color.Azure;
+            this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn5.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn5.Location = new System.Drawing.Point(9, 216);
+            this.btn5.Name = "btn5";
+            this.btn5.Size = new System.Drawing.Size(145, 105);
+            this.btn5.TabIndex = 1;
+            this.btn5.Text = "메뉴 5";
+            this.btn5.UseVisualStyleBackColor = false;
+            this.btn5.Click += new System.EventHandler(this.btn_click);
             // 
-            // button16
+            // btn6
             // 
-            this.button16.BackColor = System.Drawing.Color.Azure;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button16.Location = new System.Drawing.Point(169, 216);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(145, 105);
-            this.button16.TabIndex = 1;
-            this.button16.Text = "메뉴 6";
-            this.button16.UseVisualStyleBackColor = false;
+            this.btn6.BackColor = System.Drawing.Color.Azure;
+            this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn6.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn6.Location = new System.Drawing.Point(169, 216);
+            this.btn6.Name = "btn6";
+            this.btn6.Size = new System.Drawing.Size(145, 105);
+            this.btn6.TabIndex = 1;
+            this.btn6.Text = "메뉴 6";
+            this.btn6.UseVisualStyleBackColor = false;
+            this.btn6.Click += new System.EventHandler(this.btn_click);
             // 
-            // button17
+            // btn7
             // 
-            this.button17.BackColor = System.Drawing.Color.Azure;
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button17.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button17.Location = new System.Drawing.Point(329, 216);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(145, 105);
-            this.button17.TabIndex = 1;
-            this.button17.Text = "메뉴 7";
-            this.button17.UseVisualStyleBackColor = false;
+            this.btn7.BackColor = System.Drawing.Color.Azure;
+            this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn7.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn7.Location = new System.Drawing.Point(329, 216);
+            this.btn7.Name = "btn7";
+            this.btn7.Size = new System.Drawing.Size(145, 105);
+            this.btn7.TabIndex = 1;
+            this.btn7.Text = "메뉴 7";
+            this.btn7.UseVisualStyleBackColor = false;
+            this.btn7.Click += new System.EventHandler(this.btn_click);
             // 
-            // button18
+            // btn8
             // 
-            this.button18.BackColor = System.Drawing.Color.Azure;
-            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button18.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button18.Location = new System.Drawing.Point(489, 216);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(145, 105);
-            this.button18.TabIndex = 1;
-            this.button18.Text = "메뉴 8";
-            this.button18.UseVisualStyleBackColor = false;
+            this.btn8.BackColor = System.Drawing.Color.Azure;
+            this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn8.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn8.Location = new System.Drawing.Point(489, 216);
+            this.btn8.Name = "btn8";
+            this.btn8.Size = new System.Drawing.Size(145, 105);
+            this.btn8.TabIndex = 1;
+            this.btn8.Text = "메뉴 8";
+            this.btn8.UseVisualStyleBackColor = false;
+            this.btn8.Click += new System.EventHandler(this.btn_click);
             // 
-            // button19
+            // btn9
             // 
-            this.button19.BackColor = System.Drawing.Color.Azure;
-            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button19.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button19.Location = new System.Drawing.Point(9, 336);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(145, 105);
-            this.button19.TabIndex = 1;
-            this.button19.Text = "메뉴 9";
-            this.button19.UseVisualStyleBackColor = false;
+            this.btn9.BackColor = System.Drawing.Color.Azure;
+            this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn9.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn9.Location = new System.Drawing.Point(9, 336);
+            this.btn9.Name = "btn9";
+            this.btn9.Size = new System.Drawing.Size(145, 105);
+            this.btn9.TabIndex = 1;
+            this.btn9.Text = "메뉴 9";
+            this.btn9.UseVisualStyleBackColor = false;
+            this.btn9.Click += new System.EventHandler(this.btn_click);
             // 
-            // button20
+            // btn10
             // 
-            this.button20.BackColor = System.Drawing.Color.Azure;
-            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button20.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button20.Location = new System.Drawing.Point(169, 336);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(145, 105);
-            this.button20.TabIndex = 1;
-            this.button20.Text = "메뉴 10";
-            this.button20.UseVisualStyleBackColor = false;
+            this.btn10.BackColor = System.Drawing.Color.Azure;
+            this.btn10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn10.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn10.Location = new System.Drawing.Point(169, 336);
+            this.btn10.Name = "btn10";
+            this.btn10.Size = new System.Drawing.Size(145, 105);
+            this.btn10.TabIndex = 1;
+            this.btn10.Text = "메뉴 10";
+            this.btn10.UseVisualStyleBackColor = false;
+            this.btn10.Click += new System.EventHandler(this.btn_click);
             // 
-            // button21
+            // btn11
             // 
-            this.button21.BackColor = System.Drawing.Color.Azure;
-            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button21.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button21.Location = new System.Drawing.Point(329, 336);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(145, 105);
-            this.button21.TabIndex = 1;
-            this.button21.Text = "메뉴 11";
-            this.button21.UseVisualStyleBackColor = false;
+            this.btn11.BackColor = System.Drawing.Color.Azure;
+            this.btn11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn11.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn11.Location = new System.Drawing.Point(329, 336);
+            this.btn11.Name = "btn11";
+            this.btn11.Size = new System.Drawing.Size(145, 105);
+            this.btn11.TabIndex = 1;
+            this.btn11.Text = "메뉴 11";
+            this.btn11.UseVisualStyleBackColor = false;
+            this.btn11.Click += new System.EventHandler(this.btn_click);
             // 
-            // button22
+            // btn12
             // 
-            this.button22.BackColor = System.Drawing.Color.Azure;
-            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button22.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button22.Location = new System.Drawing.Point(489, 336);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(145, 105);
-            this.button22.TabIndex = 1;
-            this.button22.Text = "메뉴 12";
-            this.button22.UseVisualStyleBackColor = false;
+            this.btn12.BackColor = System.Drawing.Color.Azure;
+            this.btn12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn12.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn12.Location = new System.Drawing.Point(489, 336);
+            this.btn12.Name = "btn12";
+            this.btn12.Size = new System.Drawing.Size(145, 105);
+            this.btn12.TabIndex = 1;
+            this.btn12.Text = "메뉴 12";
+            this.btn12.UseVisualStyleBackColor = false;
+            this.btn12.Click += new System.EventHandler(this.btn_click);
             // 
-            // button23
+            // btn13
             // 
-            this.button23.BackColor = System.Drawing.Color.Azure;
-            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button23.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button23.Location = new System.Drawing.Point(9, 456);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(145, 105);
-            this.button23.TabIndex = 1;
-            this.button23.Text = "메뉴 13";
-            this.button23.UseVisualStyleBackColor = false;
+            this.btn13.BackColor = System.Drawing.Color.Azure;
+            this.btn13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn13.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn13.Location = new System.Drawing.Point(9, 456);
+            this.btn13.Name = "btn13";
+            this.btn13.Size = new System.Drawing.Size(145, 105);
+            this.btn13.TabIndex = 1;
+            this.btn13.Text = "메뉴 13";
+            this.btn13.UseVisualStyleBackColor = false;
+            this.btn13.Click += new System.EventHandler(this.btn_click);
             // 
-            // button24
+            // btn14
             // 
-            this.button24.BackColor = System.Drawing.Color.Azure;
-            this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button24.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button24.Location = new System.Drawing.Point(169, 456);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(145, 105);
-            this.button24.TabIndex = 1;
-            this.button24.Text = "메뉴 14";
-            this.button24.UseVisualStyleBackColor = false;
+            this.btn14.BackColor = System.Drawing.Color.Azure;
+            this.btn14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn14.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn14.Location = new System.Drawing.Point(169, 456);
+            this.btn14.Name = "btn14";
+            this.btn14.Size = new System.Drawing.Size(145, 105);
+            this.btn14.TabIndex = 1;
+            this.btn14.Text = "메뉴 14";
+            this.btn14.UseVisualStyleBackColor = false;
+            this.btn14.Click += new System.EventHandler(this.btn_click);
             // 
-            // button25
+            // btn15
             // 
-            this.button25.BackColor = System.Drawing.Color.Azure;
-            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button25.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button25.Location = new System.Drawing.Point(329, 456);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(145, 105);
-            this.button25.TabIndex = 1;
-            this.button25.Text = "메뉴 15";
-            this.button25.UseVisualStyleBackColor = false;
+            this.btn15.BackColor = System.Drawing.Color.Azure;
+            this.btn15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn15.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn15.Location = new System.Drawing.Point(329, 456);
+            this.btn15.Name = "btn15";
+            this.btn15.Size = new System.Drawing.Size(145, 105);
+            this.btn15.TabIndex = 1;
+            this.btn15.Text = "메뉴 15";
+            this.btn15.UseVisualStyleBackColor = false;
+            this.btn15.Click += new System.EventHandler(this.btn_click);
             // 
-            // button26
+            // btn16
             // 
-            this.button26.BackColor = System.Drawing.Color.Azure;
-            this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button26.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button26.Location = new System.Drawing.Point(489, 456);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(145, 105);
-            this.button26.TabIndex = 1;
-            this.button26.Text = "메뉴 16";
-            this.button26.UseVisualStyleBackColor = false;
+            this.btn16.BackColor = System.Drawing.Color.Azure;
+            this.btn16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn16.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn16.Location = new System.Drawing.Point(489, 456);
+            this.btn16.Name = "btn16";
+            this.btn16.Size = new System.Drawing.Size(145, 105);
+            this.btn16.TabIndex = 1;
+            this.btn16.Text = "메뉴 16";
+            this.btn16.UseVisualStyleBackColor = false;
+            this.btn16.Click += new System.EventHandler(this.btn_click);
             // 
             // panel1
             // 
@@ -425,26 +442,26 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.button17);
-            this.panel2.Controls.Add(this.button15);
-            this.panel2.Controls.Add(this.button10);
-            this.panel2.Controls.Add(this.button16);
-            this.panel2.Controls.Add(this.button9);
-            this.panel2.Controls.Add(this.button19);
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.button22);
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.button26);
-            this.panel2.Controls.Add(this.button14);
-            this.panel2.Controls.Add(this.button23);
-            this.panel2.Controls.Add(this.button13);
-            this.panel2.Controls.Add(this.button20);
-            this.panel2.Controls.Add(this.button12);
-            this.panel2.Controls.Add(this.button18);
-            this.panel2.Controls.Add(this.button11);
-            this.panel2.Controls.Add(this.button24);
-            this.panel2.Controls.Add(this.button21);
-            this.panel2.Controls.Add(this.button25);
+            this.panel2.Controls.Add(this.btn7);
+            this.panel2.Controls.Add(this.btn5);
+            this.panel2.Controls.Add(this.kindOf_3btn);
+            this.panel2.Controls.Add(this.btn6);
+            this.panel2.Controls.Add(this.kindOf_2btn);
+            this.panel2.Controls.Add(this.btn9);
+            this.panel2.Controls.Add(this.kindOf_1btn);
+            this.panel2.Controls.Add(this.btn12);
+            this.panel2.Controls.Add(this.fowardbtn);
+            this.panel2.Controls.Add(this.btn16);
+            this.panel2.Controls.Add(this.btn4);
+            this.panel2.Controls.Add(this.btn13);
+            this.panel2.Controls.Add(this.btn3);
+            this.panel2.Controls.Add(this.btn10);
+            this.panel2.Controls.Add(this.btn2);
+            this.panel2.Controls.Add(this.btn8);
+            this.panel2.Controls.Add(this.btn1);
+            this.panel2.Controls.Add(this.btn14);
+            this.panel2.Controls.Add(this.btn11);
+            this.panel2.Controls.Add(this.btn15);
             this.panel2.Location = new System.Drawing.Point(469, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(646, 573);
@@ -466,13 +483,13 @@
             this.ClientSize = new System.Drawing.Size(1125, 589);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.backbtn);
+            this.Controls.Add(this.Deletebtn);
+            this.Controls.Add(this.CardPaybtn);
+            this.Controls.Add(this.kakaPaybtn);
+            this.Controls.Add(this.Minusbtn);
+            this.Controls.Add(this.PlusBtn);
+            this.Controls.Add(this.OrderListView);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -481,6 +498,7 @@
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "키오스크";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -488,36 +506,36 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView OrderListView;
         private System.Windows.Forms.ColumnHeader listName;
         private System.Windows.Forms.ColumnHeader listPrice;
         private System.Windows.Forms.ColumnHeader listCount;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button PlusBtn;
+        private System.Windows.Forms.Button Minusbtn;
+        private System.Windows.Forms.Button kakaPaybtn;
+        private System.Windows.Forms.Button Deletebtn;
+        private System.Windows.Forms.Button CardPaybtn;
+        private System.Windows.Forms.Button backbtn;
+        private System.Windows.Forms.Button fowardbtn;
+        private System.Windows.Forms.Button kindOf_1btn;
+        private System.Windows.Forms.Button kindOf_2btn;
+        private System.Windows.Forms.Button kindOf_3btn;
+        private System.Windows.Forms.Button btn1;
+        private System.Windows.Forms.Button btn2;
+        private System.Windows.Forms.Button btn3;
+        private System.Windows.Forms.Button btn4;
+        private System.Windows.Forms.Button btn5;
+        private System.Windows.Forms.Button btn6;
+        private System.Windows.Forms.Button btn7;
+        private System.Windows.Forms.Button btn8;
+        private System.Windows.Forms.Button btn9;
+        private System.Windows.Forms.Button btn10;
+        private System.Windows.Forms.Button btn11;
+        private System.Windows.Forms.Button btn12;
+        private System.Windows.Forms.Button btn13;
+        private System.Windows.Forms.Button btn14;
+        private System.Windows.Forms.Button btn15;
+        private System.Windows.Forms.Button btn16;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
