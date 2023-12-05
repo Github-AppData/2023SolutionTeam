@@ -64,6 +64,7 @@ namespace Kiosk
                     {
                         // 버튼 텍스트 설정
                         btn.Text = table["name"].ToString();
+                        Console.WriteLine(table["name"].ToString());
 
                         // 버튼 이벤트 핸들러 등록
                         btn.Click += new EventHandler(btn_click);
@@ -87,6 +88,7 @@ namespace Kiosk
             finally
             {
                 conn.Close();
+                sum = 0;
             }
             
 
@@ -101,6 +103,12 @@ namespace Kiosk
         {
             // 이벤트가 발생한 버튼을 확인합니다.
             Button clickedButton = sender as Button;
+
+            /*foreach (var h in handles)
+            {
+                Console.WriteLine("" + h.Method.Name);
+            }*/
+
             string menuNameselectQuery = "select name, quantity, price from "+ kindname+" where name = @name;";
 
             try
@@ -118,7 +126,8 @@ namespace Kiosk
                         // 여러 값을 저장할 리스트
                         List<string[]> listViewItems = new List<string[]>();
                         listViewItems.Clear();
-                        
+                        // 클릭할 때마다 기존 아이템들을 지우고 다시 추가
+                        //OrderListView.Items.Clear();
 
                         while (table.Read())
                         {
@@ -141,7 +150,6 @@ namespace Kiosk
                                     // ListView에 아이템 추가
                                     OrderListView.Items.Add(listViewItem);
 
-                                    
                                     foreach (ListViewItem item in OrderListView.Items)
                                     {
                                         // 컬럼 인덱스를 사용하여 값을 가져오기
@@ -157,7 +165,7 @@ namespace Kiosk
 
                                     }
                                 } 
-                                catch (ArgumentOutOfRangeException ex)
+                                catch (ArgumentOutOfRangeException ex)  
                                 {
                                     // 예외 처리 로직
                                     Console.WriteLine($"ListView에 아이템 추가 중 오류: {ex.Message}");
@@ -202,9 +210,6 @@ namespace Kiosk
                     {
                         // 버튼 텍스트 설정
                         btn.Text = table["name"].ToString();
-
-                        // 버튼 이벤트 핸들러 등록
-                        btn.Click += new EventHandler(btn_click);
 
                         // 다음 버튼을 위해 인덱스 증가
                         buttonIndex++;
@@ -252,7 +257,7 @@ namespace Kiosk
                         btn.Text = table["name"].ToString();
 
                         // 버튼 이벤트 핸들러 등록
-                        btn.Click += new EventHandler(btn_click);
+                        //btn.Click += new EventHandler(btn_click);
 
                         // 다음 버튼을 위해 인덱스 증가
                         buttonIndex++;
@@ -326,6 +331,7 @@ namespace Kiosk
         {
             sum = 0;
             OrderListView.Items.Clear();
+            txtbox.Text = "";
         }
 
         private void OrderListView_MouseDown(object sender, MouseEventArgs e)
@@ -338,7 +344,7 @@ namespace Kiosk
 
                 if (clickedItem != null)
                 {
-                    // 컬럼 인덱스를 사용하여 값을 가져오기
+                    // 컬럼 인덱스를 사용하여 수량 값을 가져오기
                     quantityStringValue = clickedItem.SubItems[quantityColumnIndex].Text;
                 }
             }

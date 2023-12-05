@@ -393,7 +393,7 @@
             this.btn16.BackColor = System.Drawing.Color.Azure;
             this.btn16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn16.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn16.Location = new System.Drawing.Point(489, 456);
+            this.btn16.Location = new System.Drawing.Point(489, 453);
             this.btn16.Name = "btn16";
             this.btn16.Size = new System.Drawing.Size(145, 105);
             this.btn16.TabIndex = 1;
@@ -449,6 +449,7 @@
             // 
             // txtbox
             // 
+            this.txtbox.Font = new System.Drawing.Font("굴림", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtbox.Location = new System.Drawing.Point(14, 458);
             this.txtbox.Multiline = true;
             this.txtbox.Name = "txtbox";
