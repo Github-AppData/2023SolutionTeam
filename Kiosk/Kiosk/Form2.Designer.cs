@@ -196,6 +196,7 @@
             this.kindOf_1btn.TabIndex = 1;
             this.kindOf_1btn.Text = "종류 1";
             this.kindOf_1btn.UseVisualStyleBackColor = false;
+            this.kindOf_1btn.Click += new System.EventHandler(this.kindof1_btn_click);
             // 
             // kindOf_2btn
             // 
@@ -208,6 +209,7 @@
             this.kindOf_2btn.TabIndex = 1;
             this.kindOf_2btn.Text = "종류 2";
             this.kindOf_2btn.UseVisualStyleBackColor = false;
+            this.kindOf_2btn.Click += new System.EventHandler(this.kindof2_btn_click);
             // 
             // kindOf_3btn
             // 
@@ -220,6 +222,7 @@
             this.kindOf_3btn.TabIndex = 1;
             this.kindOf_3btn.Text = "종류 3";
             this.kindOf_3btn.UseVisualStyleBackColor = false;
+            this.kindOf_3btn.Click += new System.EventHandler(this.kindof3_btn_click);
             // 
             // btn1
             // 

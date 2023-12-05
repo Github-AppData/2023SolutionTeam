@@ -98,3 +98,5 @@ E:\GitHub\PointOfSales_Solution\Kiosk\Kiosk\obj\Debug\Kiosk.csproj.CoreCompileIn
 E:\GitHub\PointOfSales_Solution\Kiosk\Kiosk\obj\Debug\Kiosk.csproj.CopyComplete
 E:\GitHub\PointOfSales_Solution\Kiosk\Kiosk\obj\Debug\Kiosk.exe
 E:\GitHub\PointOfSales_Solution\Kiosk\Kiosk\obj\Debug\Kiosk.pdb
+C:\Users\YUHAN\Documents\PointOfSales_Solution\Kiosk\Kiosk\obj\Debug\Kiosk.csproj.AssemblyReference.cache
+C:\Users\YUHAN\Documents\PointOfSales_Solution\Kiosk\Kiosk\obj\Debug\Kiosk.csproj.SuggestedBindingRedirects.cache
