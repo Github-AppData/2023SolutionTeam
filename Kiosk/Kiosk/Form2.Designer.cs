@@ -78,7 +78,6 @@
             this.OrderListView.TabIndex = 0;
             this.OrderListView.UseCompatibleStateImageBehavior = false;
             this.OrderListView.View = System.Windows.Forms.View.Details;
-            this.OrderListView.SelectedIndexChanged += new System.EventHandler(this.OrderListView_SelectedIndexChanged);
             this.OrderListView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OrderListView_MouseDown);
             // 
             // listName
@@ -455,7 +454,6 @@
             this.txtbox.Name = "txtbox";
             this.txtbox.Size = new System.Drawing.Size(438, 108);
             this.txtbox.TabIndex = 4;
-            this.txtbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // listcount
             // 

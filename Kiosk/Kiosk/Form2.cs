@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -23,8 +24,13 @@ namespace Kiosk
                                                     "Pwd=1234;");
 
         int sum = 0;
+        int iss = 0;
+
+        // 현재잔액
+        string priceValue = " ";
 
         string quantityStringValue;
+        string priceStringValue;
         ListViewItem clickedItem;
         // "수량" 컬럼의 인덱스를 지정 (예를 들어, 3번째 컬럼이라면 2를 사용)
         int quantityColumnIndex = 1;
@@ -53,7 +59,7 @@ namespace Kiosk
                 MySqlDataReader table = cmd.ExecuteReader();
 
                 int buttonIndex = 1;
-
+                var i = 0;
                 // 데이터가 없을 때까지 Read 된다.
                 while (table.Read())
                 {
@@ -65,9 +71,10 @@ namespace Kiosk
                         // 버튼 텍스트 설정
                         btn.Text = table["name"].ToString();
                         Console.WriteLine(table["name"].ToString());
+                        Console.WriteLine("이벤트 갯수 : " + i);
 
                         // 버튼 이벤트 핸들러 등록
-                        btn.Click += new EventHandler(btn_click);
+                        // btn.Click += new EventHandler(btn_click);
 
                         // 다음 버튼을 위해 인덱스 증가
                         buttonIndex++;
@@ -104,11 +111,6 @@ namespace Kiosk
             // 이벤트가 발생한 버튼을 확인합니다.
             Button clickedButton = sender as Button;
 
-            /*foreach (var h in handles)
-            {
-                Console.WriteLine("" + h.Method.Name);
-            }*/
-
             string menuNameselectQuery = "select name, quantity, price from "+ kindname+" where name = @name;";
 
             try
@@ -118,8 +120,6 @@ namespace Kiosk
                 using (MySqlCommand cmd2 = new MySqlCommand(menuNameselectQuery, conn))
                 {
                     cmd2.Parameters.AddWithValue("@name", clickedButton.Text);
-
-                    Console.WriteLine(clickedButton.Text);
                     
                     using(MySqlDataReader table = cmd2.ExecuteReader())
                     {
@@ -131,46 +131,39 @@ namespace Kiosk
 
                         while (table.Read())
                         {
-                            string nameValue = "";
-                            string quanValue = "";
-                            string priceValue = "";
+                            string nameValue = " ";
+                            string quanValue = " ";
+                            priceValue = " ";
+
                             nameValue = table["name"].ToString();
-                            // Console.WriteLine("nameValue : " + nameValue);
                             quanValue = table["quantity"].ToString();
                             priceValue = table["price"].ToString();
-                            
-                                try
-                                {
-                                    // 각각의 값을 배열에 저장
-                                    var listViewArray = new string[] { nameValue, quanValue, priceValue };
 
-                                    // ListViewItem 생성 및 각 컬럼 값 추가
-                                    var listViewItem = new ListViewItem(listViewArray);
+                            try
+                            {
+                                // 각각의 값을 배열에 저장
+                                var listViewArray = new string[] { nameValue, quanValue, priceValue };
 
-                                    // ListView에 아이템 추가
-                                    OrderListView.Items.Add(listViewItem);
+                                // ListViewItem 생성 및 각 컬럼 값 추가
+                                var listViewItem = new ListViewItem(listViewArray);
 
-                                    foreach (ListViewItem item in OrderListView.Items)
-                                    {
-                                        // 컬럼 인덱스를 사용하여 값을 가져오기
-                                        var price2Value = Convert.ToInt32(item.SubItems[priceColumnIndex].Text);
-                                        sum += price2Value;
+                                // ListView에 아이템 추가
+                                OrderListView.Items.Add(listViewItem);
 
-                                        // 리스트에 값 추가
-                                        //prices.Add(price2Value);
+                                // 컬럼 인덱스를 사용하여 값을 가져오기
+                                var price2Value = Convert.ToInt32(priceValue);
 
-                                        Console.WriteLine("sum : " + sum);
+                                sum += price2Value;
+                                price2Value = 0;
 
-                                        txtbox.Text = Convert.ToString(sum);
+                                txtbox.Text = Convert.ToString(sum);
+                            }
 
-                                    }
-                                } 
-                                catch (ArgumentOutOfRangeException ex)  
-                                {
-                                    // 예외 처리 로직
-                                    Console.WriteLine($"ListView에 아이템 추가 중 오류: {ex.Message}");
-                                }
-                              
+                            catch (ArgumentOutOfRangeException ex)
+                            {
+                                // 예외 처리 로직
+                                Console.WriteLine($"ListView에 아이템 추가 중 오류: {ex.Message}");
+                            }
                         }
                         table.Close();
                     }
@@ -317,16 +310,6 @@ namespace Kiosk
             
         }
 
-        private void OrderListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Deletebtn_Click(object sender, EventArgs e)
         {
             sum = 0;
@@ -346,12 +329,23 @@ namespace Kiosk
                 {
                     // 컬럼 인덱스를 사용하여 수량 값을 가져오기
                     quantityStringValue = clickedItem.SubItems[quantityColumnIndex].Text;
+                    priceStringValue = clickedItem.SubItems[priceColumnIndex].Text;
                 }
             }
         }
 
         private void PlusBtn_Click(object sender, EventArgs e)
         {
+           
+            int.TryParse(priceStringValue, out int currentprcie);
+            sum += currentprcie;
+            //Console.WriteLine(currentprcie);
+            txtbox.Text = Convert.ToString(sum);
+
+            // 증가된 값을 다시 리스트뷰에 할당
+            //clickedItem.SubItems[priceColumnIndex].Text = currentprcie.ToString();
+
+
             // 문자열을 int로 변환
             if (int.TryParse(quantityStringValue, out int currentQuantity))
             {
@@ -360,6 +354,7 @@ namespace Kiosk
 
                 // 증가된 값을 다시 리스트뷰에 할당
                 clickedItem.SubItems[quantityColumnIndex].Text = currentQuantity.ToString();
+                
             }
             else
             {
@@ -370,6 +365,11 @@ namespace Kiosk
 
         private void Minusbtn_Click(object sender, EventArgs e)
         {
+            int.TryParse(priceStringValue, out int currentprcie);
+            sum -= currentprcie;
+            //Console.WriteLine(currentprcie);
+            txtbox.Text = Convert.ToString(sum);
+
             // 문자열을 int로 변환
             if (int.TryParse(quantityStringValue, out int currentQuantity))
             {
