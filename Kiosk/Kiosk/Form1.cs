@@ -72,15 +72,26 @@ namespace Kiosk
                         login_status = 1;
                     }
                 }
-                conn.Close();
 
                 if(login_status == 1)
                 {
-                    MessageBox.Show("로그인에 성공하였습니다.");
-                    Form2 form2 = new Form2();
-                    form2.ShowDialog();
+                    var name = table["user_id"].ToString();
+                    if (name.Equals("admin"))
+                    {
+                        Form4 form4 = new Form4();
+                        form4.ShowDialog();
 
-                    Close();
+                        conn.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("로그인에 성공하였습니다.", "check", MessageBoxButtons.OK);
+                        Form2 form2 = new Form2();
+                        form2.ShowDialog();
+
+                        conn.Close();
+
+                    }
                 }
                 else
                 {
