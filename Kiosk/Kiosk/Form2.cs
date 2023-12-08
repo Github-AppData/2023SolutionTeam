@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using CefSharp;
+using CefSharp.WinForms;
 
 
 
@@ -44,10 +46,13 @@ namespace Kiosk
 
         MySqlCommand cmd;
         string kindname = "coffee";
-        
-        // 폼이 표시되기 이 전에 발생한다.
-        // - 데이터를 셋 하는 과정
-        private void Form2_Load(object sender, EventArgs e)
+
+		// 폼이 표시되기 이 전에 발생한다.
+		// - 데이터를 셋 하는 과정
+		private ChromiumWebBrowser chromeBrowser;
+		// CefSharp 크롬 브라우저
+
+		private void Form2_Load(object sender, EventArgs e)
         {
             sum = 0;
             string menuAllselectQuery = "select name from coffee order by idx;";
@@ -97,9 +102,10 @@ namespace Kiosk
                 conn.Close();
                 sum = 0;
             }
-            
 
-        }
+			InitializeChromium();
+			LoadWebPage();
+		}
 
         public Form2()
         {
@@ -385,5 +391,191 @@ namespace Kiosk
                 Console.WriteLine($"수량 값을 int로 변환할 수 없습니다: {quantityStringValue}");
             }
         }
-    }
+
+		private void KakaPaybtn_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (panel4.Visible)
+				{
+					HidePanel();
+					chromeBrowser.Reload(true);
+				}
+				else
+				{
+					string script = $"kakao({GetAmountFromTextBox()});";
+					ShowPanel();
+					chromeBrowser.ExecuteScriptAsync(script);
+				}
+			}
+			catch (Exception ex)
+			{
+				//
+				HidePanel();
+			}
+		}
+
+		private void CardPaybtn_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (panel4.Visible)
+				{
+					HidePanel();
+					chromeBrowser.Reload(true);
+				}
+				else
+				{
+					string script = $"pg({GetAmountFromTextBox()});";
+					ShowPanel();
+					chromeBrowser.ExecuteScriptAsync(script);
+				}
+			}
+			catch (Exception ex)
+			{
+				//
+				HidePanel();
+			}
+		}
+
+
+		private void InitializeChromium()
+		{
+			CefSettings settings = new CefSettings();
+			Cef.Initialize(settings);
+			chromeBrowser = new ChromiumWebBrowser("about:blank");
+			chromeBrowser.Dock = DockStyle.Fill;
+
+			panel4.Controls.Add(chromeBrowser);
+
+		}
+
+		private void LoadWebPage()
+		{
+
+			// CDN에서 jQuery 스크립트를 로드
+			string jqueryScript = "<script src='https://code.jquery.com/jquery-3.6.4.min.js'></script>";
+			string iamport = "<script src='https://cdn.iamport.kr/v1/iamport.js'></script>";
+			// 간단한 HTML 페이지
+			string htmlContent = $@"
+                <html>
+                <head>
+                    {jqueryScript}
+                    {iamport}
+                </head>
+                <body>
+                    <br><br><center><h2>결제창</h2></center>
+
+                    <script>
+                        const userCode = 'imp62443370';
+                        let impUid;
+                        IMP.init(userCode);
+                        function pg(amount) {{
+                            IMP.request_pay({{
+                                    pg: 'html5_inicis',
+                                    pay_method: 'card',
+                                    merchant_uid: 'merchant_' + new Date().getTime(),
+                                    name: '키오스크 결제',
+                                    amount: amount,
+                                    buyer_email: '',
+                                    buyer_name: '테스터',
+                                    buyer_tel: '',    
+                                    buyer_addr: '서울특별시 강남구 삼성동',
+                                    buyer_postcode: '123-456'
+                            }}, function(rsp) {{
+                                var result = '';
+                                var msg = '';
+                                if (rsp.success) {{
+                                    msg = '결제가 완료되었습니다.\n';
+                                    msg += '고유ID : ' + rsp.imp_uid + '\n';
+                                    msg += '상점 거래ID : ' + rsp.merchant_uid + '\n';
+                                    msg += '결제 금액 : ' + rsp.paid_amount;
+                                    impUid = rsp.imp_uid; // 결제 고유 ID를 저장
+                                }} else {{
+                                    msg += '에러내용 : ' + rsp.error_msg;
+                                }}
+                                alert(msg);
+                            }});
+
+                        }}
+
+						function kakao(amount) {{
+                            IMP.request_pay({{
+                                    pg: 'kakaopay',
+                                    pay_method: 'card',
+                                    merchant_uid: 'merchant_' + new Date().getTime(),
+                                    name: '키오스크 결제',
+                                    amount: amount,
+                                    buyer_name: '테스터',
+                                    buyer_tel: ''    
+                            }}, function(rsp) {{
+                                var result = '';
+                                var msg = '';
+                                if (rsp.success) {{
+                                    msg = '결제가 완료되었습니다.\n';
+                                    msg += '고유ID : ' + rsp.imp_uid + '\n';
+                                    msg += '상점 거래ID : ' + rsp.merchant_uid + '\n';
+                                    msg += '결제 금액 : ' + rsp.paid_amount;
+                                    impUid = rsp.imp_uid; // 결제 고유 ID를 저장
+                                }} else {{
+                                    msg += '에러내용 : ' + rsp.error_msg;
+                                }}
+                                alert(msg);
+                            }});
+
+                        }}
+
+						document.getElementById('pgButton').addEventListener('click', function() {{
+		                    pg();
+						}});
+
+						document.getElementById('kakaoButton').addEventListener('click', function() {{
+							kakao();
+						}});
+                    </script>
+                </body>
+                </html>";
+
+			// CefSharp에 HTML 로드
+			chromeBrowser.LoadHtml(htmlContent, "http://example/");
+
+
+		}
+
+		private void HidePanel()
+		{
+			if (panel4.Visible)
+			{
+				panel4.Invoke(new Action(() =>
+				{
+					panel4.Visible = false;
+				}));
+			}
+		}
+
+		private void ShowPanel()
+		{
+			if (!panel4.Visible)
+			{
+				panel4.Invoke(new Action(() =>
+				{
+					panel4.Visible = true;
+				}));
+			}
+		}
+
+		// txtBox.txt에서 값을 읽어와 정수로 반환
+		private int GetAmountFromTextBox()
+		{
+			if (int.TryParse(txtbox.Text, out int amount))
+			{
+				return amount;
+			}
+			else
+			{
+				// 정수로 변환할 수 없는 경우 기본값 또는 에러 처리
+				return 0;
+			}
+		}
+	}
 }
